@@ -1,9 +1,9 @@
 <template>
     <div class="card">
-        <img :src="getImageSrc" alt="Poster" class="card-image">
+        <img :src="imageSrc" alt="Poster" class="card-image">
         <div class="card-info">
-            <p class="title">{{ getTitle }}</p>
-            <p v-if="getOriginalTitle !== getTitle">Titolo Originale: {{ getOriginalTitle }}</p>
+            <p class="title">{{ title }}</p>
+            <p v-if="getOriginalTitle !== getTitle">Titolo Originale: {{ originalTitle }}</p>
             <div class="language">
                 <p>Lingua: </p>
                 <img :src="srcFlag" alt="">
@@ -17,12 +17,12 @@
                 <p>Voto:</p>
                 <div class="stars">
                     <div class="star" v-for="n in 5">
-                        <span v-if="getVoteAverage >=n"><font-awesome-icon icon="fa-solid fa-star" /></span>
+                        <span v-if="voteAverage >=n"><font-awesome-icon icon="fa-solid fa-star" /></span>
                         <span v-else><font-awesome-icon icon="fa-regular fa-star" /></span>
                     </div>
     
                 </div>
-               <span>{{ getVoteAverage }}/5</span>
+               <span>{{ voteAverage }}/5</span>
             </div>
            
         </div>
@@ -53,24 +53,24 @@ import { store } from '../store'
                     return `https://flagsapi.com/GB/flat/24.png`
                 }
             },
-            getTitle(){
+            title(){
                 if(this.currentMovie.title) {
                     return this.currentMovie.title
                 } else {
                     return this.currentMovie.name
                 }
             },
-            getOriginalTitle(){
+            originalTitle(){
                 if(this.currentMovie.original_title) {
                     return this.currentMovie.original_title
                 } else {
                     return this.currentMovie.original_name
                 }
             },
-            getVoteAverage(){
+            voteAverage(){
                 return Math.floor(this.currentMovie.vote_average / 2) 
             },
-            getImageSrc() {
+            imageSrc() {
                 if(this.currentMovie.poster_path){
 
                     return `https://image.tmdb.org/t/p/w500${this.currentMovie.poster_path}`
