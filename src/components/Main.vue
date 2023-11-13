@@ -18,7 +18,7 @@
                 <h1>SERIE TV</h1>
                 <div class="grid">
                     <div v-for="(serie, i) in store.series">
-                        <Card item="serie" />
+                        <Card :item="serie" />
                     </div>
                 </div>
             </div>
@@ -39,7 +39,6 @@ import { store } from '../store'
         data(){
             return {
                 store,
-                message: 'Ciao',
 
             }
         },
@@ -56,7 +55,7 @@ main {
 }
 .grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 }
 

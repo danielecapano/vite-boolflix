@@ -3,7 +3,7 @@
         <img :src="imageSrc" alt="Poster" class="card-image">
         <div class="card-info">
             <p class="title">{{ title }}</p>
-            <p v-if="getOriginalTitle !== getTitle">Titolo Originale: {{ originalTitle }}</p>
+            <p v-if="originalTitle !== title">Titolo Originale: {{ originalTitle }}</p>
             <div class="language">
                 <p>Lingua: </p>
                 <img :src="srcFlag" alt="">
