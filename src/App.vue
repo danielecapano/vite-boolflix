@@ -34,7 +34,7 @@ export default {
                 .then(res => {
                     console.log(res.data.results);
                     this.store.movies = res.data.results
-                    this.store.searchText = ''
+                    
                 })
             },
             searchSeries(){
@@ -48,7 +48,6 @@ export default {
                 .then(res => {
                     console.log(res.data.results);
                     this.store.series = res.data.results
-                    this.store.searchText = ''
                 })
             },
             search(){
