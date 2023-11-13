@@ -51,11 +51,11 @@ header {
             input {
                 border: 3px solid #DC1A28;
                 outline: none;
-                padding: 1rem;
+                padding: 0.75rem;
                 border-radius: 999px;
                 background-color: transparent;
                 color: #ffffff;
-                font-size: 1.25rem;
+                font-size: 1rem;
                 font-family: 'Outfit', sans-serif;
             }
             button {
@@ -69,7 +69,7 @@ header {
                 border: none;
                 outline: none;
                 color: #FFF;
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 cursor: pointer;
 
             }
