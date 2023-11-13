@@ -7,7 +7,7 @@
                 <h1>FILM</h1>
                 <div class="grid">
                     <div v-for="(movie, i) in store.movies">
-                        <Card :currentMovie="movie" />
+                        <Card :item="movie" />
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                 <h1>SERIE TV</h1>
                 <div class="grid">
                     <div v-for="(serie, i) in store.series">
-                        <Card :currentMovie="serie" />
+                        <Card item="serie" />
                     </div>
                 </div>
             </div>

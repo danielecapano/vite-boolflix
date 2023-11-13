@@ -12,7 +12,7 @@
          
        
            
-            <p class="overview">{{ currentMovie.overview }}</p>
+            <p class="overview">{{ item.overview }}</p>
             <div class="vote-average">
                 <p>Voto:</p>
                 <div class="stars">
@@ -34,7 +34,7 @@ import { store } from '../store'
 
     export default {
         props: {
-            currentMovie: {
+            item: {
                 type: Object,
                 required: true
             }
@@ -46,34 +46,34 @@ import { store } from '../store'
         },
         computed: {
             srcFlag(){
-                if(this.currentMovie.original_language !== 'en'){
+                if(this.item.original_language !== 'en'){
 
-                    return `https://flagsapi.com/${(this.currentMovie.original_language).toUpperCase()}/flat/24.png`
+                    return `https://flagsapi.com/${(this.item.original_language).toUpperCase()}/flat/24.png`
                 } else {
                     return `https://flagsapi.com/GB/flat/24.png`
                 }
             },
             title(){
-                if(this.currentMovie.title) {
-                    return this.currentMovie.title
+                if(this.item.title) {
+                    return this.item.title
                 } else {
-                    return this.currentMovie.name
+                    return this.item.name
                 }
             },
             originalTitle(){
-                if(this.currentMovie.original_title) {
-                    return this.currentMovie.original_title
+                if(this.item.original_title) {
+                    return this.item.original_title
                 } else {
-                    return this.currentMovie.original_name
+                    return this.item.original_name
                 }
             },
             voteAverage(){
-                return Math.floor(this.currentMovie.vote_average / 2) 
+                return Math.floor(this.item.vote_average / 2) 
             },
             imageSrc() {
-                if(this.currentMovie.poster_path){
+                if(this.item.poster_path){
 
-                    return `https://image.tmdb.org/t/p/w500${this.currentMovie.poster_path}`
+                    return `https://image.tmdb.org/t/p/w500${this.item.poster_path}`
                 } else {
                     return 'src/assets/netflix_black.png'
                 }
