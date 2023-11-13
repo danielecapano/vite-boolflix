@@ -51,8 +51,13 @@ export default {
                 })
             },
             search(){
-              this.searchMovies();
-              this.searchSeries();
+              if(store.searchText === ''){
+                store.movies = [];
+                store.series = []
+              } else {
+                this.searchMovies();
+                this.searchSeries();
+              }
             }
 
         },
