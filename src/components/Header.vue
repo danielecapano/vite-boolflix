@@ -4,7 +4,7 @@
             <nav>
                 <img src="../assets/logo.png" alt="" class="logo">
                 <div class="search">
-                    <input @keyup.enter="$emit('search')" type="text" v-model="store.searchText" placeholder="Cerca film o serie TV">
+                    <input @keyup.enter="$emit('search')" type="text" v-model.trim="store.searchText" placeholder="Cerca film o serie TV">
                     <button @click="$emit('search')" ><font-awesome-icon icon="fa-solid fa-magnifying-glass" /></button>
                 </div>
             </nav>
